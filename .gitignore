@@ -33,3 +33,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# .pyc compiled files
+*.pyc
+
+# DS_Store
+.DS_Store
