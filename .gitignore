@@ -37,5 +37,6 @@ nosetests.xml
 # .pyc compiled files
 *.pyc
 
-# DS_Store
-.DS_Store
+venv/
+static/build/
+static/.webassets-cache/
