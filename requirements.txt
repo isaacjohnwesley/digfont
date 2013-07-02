@@ -4,3 +4,5 @@ Jinja2==2.6
 Werkzeug==0.8.3
 gunicorn==0.17.2
 newrelic
+BeautifulSoup
+cssutils==0.9.10
