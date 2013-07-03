@@ -40,3 +40,5 @@ nosetests.xml
 venv/
 static/build/
 static/.webassets-cache/
+
+newrelic.ini
