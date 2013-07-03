@@ -6,7 +6,8 @@ import cssutils
 
 main = Blueprint('main', __name__, template_folder='pages')
 
-fonts=[]
+fonts_junk=[]
+newlist=[]
 
 @main.route('/')
 def index(data=None):
@@ -56,12 +57,18 @@ def fetch_css( url ):
       ## CSS PARSING ##
       for rule in sheet:
         if rule.type == rule.STYLE_RULE:
+
           # find property
           for property in rule.style:
             if property.name == 'font-family':
-              fonts.append(property.value)
+              fonts_junk.append(str(property.value))
 
-      return fonts
+              # remove duplicate entries
+              for i in fonts_junk:
+                if i not in newlist:
+                  newlist.append(i)
+
+      return newlist
 
     except:
         return "",0,0
