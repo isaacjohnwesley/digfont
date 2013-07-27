@@ -12,7 +12,7 @@ newlist=[]
 @main.route('/')
 def index(data=None):
 
-    data = fetch_css( "http://walletkit.com/" )
+    #data = fetch_css( "http://walletkit.com/" )
 
     return render_template('index.html',final=data)
 
