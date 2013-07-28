@@ -15,9 +15,13 @@ def index():
     #data = fetch_css( "http://walletkit.com/" )
     return render_template('index.html')
 
-@main.route('/search')
-def search():
-    return render_template('search_results.html')
+@main.route('/search' , methods=['POST'])
+def search(data=None):
+
+    if request.method == 'POST':
+      searchq = request.form['searchquery']
+
+    return render_template('search_results.html',data=searchq)
 
 def fetch_css( url ):
 
