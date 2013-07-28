@@ -6,3 +6,4 @@ gunicorn==0.17.2
 newrelic
 BeautifulSoup
 cssutils==0.9.10
+flask-peewee

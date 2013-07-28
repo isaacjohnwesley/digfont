@@ -42,3 +42,5 @@ static/build/
 static/.webassets-cache/
 
 newrelic.ini
+
+config.py

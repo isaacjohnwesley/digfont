@@ -4,16 +4,21 @@ from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
 import cssutils
 
+from main.model import mysql_db
+
 main = Blueprint('main', __name__, template_folder='pages')
 
 fonts_junk=[]
 newlist=[]
+
+
 
 @main.route('/')
 def index():
 
     #data = fetch_css( "http://walletkit.com/" )
     return render_template('index.html')
+
 
 @main.route('/search' , methods=['POST'])
 def search(data=None):
