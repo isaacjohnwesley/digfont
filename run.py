@@ -7,7 +7,7 @@ from webassets.loaders import PythonLoader
 app = Flask(__name__)
 assets = Environment(app)
 
-app.register_blueprint(main, url_prefix='/')
+app.register_blueprint(main)
 
 #Compress All Assets
 js = Bundle('javascripts/main.js',

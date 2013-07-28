@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template , request
 import urllib2
 from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
@@ -10,11 +10,14 @@ fonts_junk=[]
 newlist=[]
 
 @main.route('/')
-def index(data=None):
+def index():
 
     #data = fetch_css( "http://walletkit.com/" )
+    return render_template('index.html')
 
-    return render_template('index.html',final=data)
+@main.route('/search')
+def search():
+    return render_template('search_results.html')
 
 def fetch_css( url ):
 
