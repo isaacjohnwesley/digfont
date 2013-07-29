@@ -44,3 +44,5 @@ static/.webassets-cache/
 newrelic.ini
 
 config.py
+
+.gitattributes

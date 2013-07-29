@@ -7,3 +7,4 @@ newrelic
 BeautifulSoup
 cssutils==0.9.10
 flask-peewee
+MySQL-python
