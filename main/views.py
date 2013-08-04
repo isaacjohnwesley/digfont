@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template , request
-import urllib2
+import urllib2 , httplib
 from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
 import cssutils
@@ -27,6 +27,12 @@ def search(data=None):
       searchq = request.form['searchquery']
 
     return render_template('search_results.html',data=searchq)
+
+@main.route('/addnew')
+def addnew():
+
+    return render_template('addnew.html')
+
 
 def fetch_css( url ):
 

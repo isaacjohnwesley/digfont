@@ -12,17 +12,19 @@ assets = Environment(app)
 app.register_blueprint(main)
 
 #Compress All Assets
-js = Bundle('javascripts/main.js',
+js = Bundle('javascripts/vendor/jquery-1.9.1.min.js',
+            'javascripts/main.js',
             'javascripts/plugins.js',
-            'javascripts/vendor/jquery-1.9.1.min.js',
             'javascripts/vendor/modernizr-2.6.2.min.js',
-
+            'javascripts/vendor/Underscore-1.5.1.js',
+            'javascripts/vendor/backbone-min.js',
             filters='jsmin', output='gen/packedjs.js')
 assets.register('js_all', js)
 
-css = Bundle('stylesheets/css/main.css',
+css = Bundle('stylesheets/css/boilerplate_main.css',
             'stylesheets/css/normalize.css',
-            filters='sass,less,cssmin', output='gen/packedcss.css')
+            'stylesheets/css/page.css',
+            filters='cssmin', output='gen/packedcss.css')
 assets.register('css_all', css)
 
 
