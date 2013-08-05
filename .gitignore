@@ -46,3 +46,5 @@ newrelic.ini
 config.py
 
 .gitattributes
+
+ghostdriver.log

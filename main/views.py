@@ -6,11 +6,18 @@ import cssutils
 
 from main.model import mysql_db
 
+import selenium.webdriver
+driver = selenium.webdriver.PhantomJS()
+
+import PIL
+from PIL import Image
+import base64
+from io import BytesIO
+
 main = Blueprint('main', __name__, template_folder='pages')
 
 fonts_junk=[]
 newlist=[]
-
 
 
 @main.route('/')
@@ -30,11 +37,24 @@ def search(data=None):
 
 @main.route('/addnew')
 def addnew():
+    driver.get('http://heroku.com')
+    driver.set_window_size(800,600)
+    imgdata = driver.get_screenshot_as_base64()
+
+    driver.quit()
+
+    basewidth = 220
+    img = Image.open(BytesIO(base64.b64decode(imgdata)))
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    img = img.resize((basewidth,hsize), PIL.Image.ANTIALIAS)
+    img = img.crop((0,0,basewidth,basewidth))
+    img.save('isaac.png')
 
     return render_template('addnew.html')
 
 
-def fetch_css( url ):
+def fetch_css(url):
 
     try:
       response = urllib2.urlopen(url)
