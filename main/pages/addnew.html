@@ -1,42 +1,35 @@
 {% include 'header.html' %}
 
 <div class="sign-up" id="add-url-form">
-        <h1 class="sign-up-title">Add new url</h1>
-        <input type="text" class="sign-up-input" placeholder="Paste url" autofocus="">
-        <button id="add" class="sign-up-button">ADD</button>
+
 </div>
 
 
 
 {% include 'javascript_includes.html' %}
 
+<script type="text/template" id="add-url-form">
+    <h1 class="sign-up-title">Add new url</h1>
+    <input type="text" class="sign-up-input" placeholder="Paste url" autofocus="">
+    <button id="add" class="sign-up-button">ADD</button>
+</script>
+
 <script type="text/javascript">
 
 (function($){
-    var ListView = Backbone.View.extend({
-        el: $('#add-url-form'), // el attaches to existing element
 
-        events: {
-            'click button#add': 'addItem'
-        },
+    window.Url = Backbone.Model.extend({});
+
+    window.AddUrlView = Backbone.View.extend({
         initialize: function(){
-            _.bindAll(this, 'render', 'addItem'); // every function that uses 'this' as the current object should be in here
-
-            this.counter = 0; // total number of items added thus far
-            this.render();
+            this.template = _.template($('#add-url-form').html());
         },
-
         render: function(){
-            $(this.el).append("<ul></ul>");
-        },
-
-        addItem: function(){
-            this.counter++;
-            $('ul', this.el).append("<li>hello world"+this.counter+"</li>");
+            var renderedContent = this.template(this.Model.toJSON());
+            $(this.el).html(renderedContent);
+            return this;
         }
     });
-
-    var listView = new ListView();
 })(jQuery);
 
 </script>

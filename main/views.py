@@ -6,14 +6,6 @@ import cssutils
 
 from main.model import mysql_db
 
-import selenium.webdriver
-driver = selenium.webdriver.PhantomJS("vendor/phantomjs/bin/phantomjs")
-
-import PIL
-from PIL import Image
-import base64
-from io import BytesIO
-
 main = Blueprint('main', __name__, template_folder='pages')
 
 fonts_junk=[]
@@ -39,7 +31,6 @@ def search(data=None):
 def addnew():
 
     return render_template('addnew.html')
-
 
 def fetch_css(url):
 
