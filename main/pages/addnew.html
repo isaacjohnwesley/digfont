@@ -44,7 +44,7 @@ var AddUrlView = Backbone.View.extend({
        "keyup input#url-input": "validateUrl"
     },
     validateUrl: function(event){
-        //console.log("URl -" + $("#url-input").val());
+        console.log("URl -" + $("#url-input").val());
 
         function is_valid_url(chk_url){
             return chk_url.match(/^(ht|f)tps?:\/\/[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/);
