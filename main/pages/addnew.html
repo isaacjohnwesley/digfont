@@ -25,9 +25,17 @@ var Url = Backbone.Model.extend({
         this.on("change:url", function(model){
             var final_url = model.get("url");
             alert("changed url to " + final_url);
+            this.url = "http://screenshoter.herokuapp.com/takescreenshot";
         });
     },
-    url:'/addnew'
+    methodToURL: {
+        'create': 'http://screenshoter.herokuapp.com/takescreenshot'
+    },
+    sync: function(method, model, options) {
+        if (method === "get");
+        return Backbone.sync(method, model, options);
+    }
+    //url:'http://screenshoter.herokuapp.com/takescreenshot'
 
 });
 
@@ -44,23 +52,23 @@ var AddUrlView = Backbone.View.extend({
        "keyup input#url-input": "validateUrl"
     },
     validateUrl: function(event){
-        console.log("URl -" + $("#url-input").val());
-
+        //console.log("URl -" + $("#url-input").val());
         function is_valid_url(chk_url){
             return chk_url.match(/^(ht|f)tps?:\/\/[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/);
         }
     },
     addUrl: function(event){
+        var url = new Url();
         var fetched_url = $("#url-input").val();
         url.set({url:fetched_url});
-        url.save({url:fetched_url});
+        url.fetch();
+        //url.save({url:fetched_url});
     }
 
 
 });
 
 var add_url_view = new AddUrlView({el: $("#add-url-container")});
-var url = new Url();
 
 </script>
 

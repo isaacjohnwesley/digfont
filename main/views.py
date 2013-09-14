@@ -1,10 +1,14 @@
 from flask import Blueprint, render_template , request
+
+# For scraping
 import urllib2 , httplib
 from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
 import cssutils
 
 from main.model import mysql_db
+
+
 
 main = Blueprint('main', __name__, template_folder='pages')
 

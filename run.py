@@ -5,8 +5,10 @@ from main.views import main
 from webassets.loaders import PythonLoader
 
 
+
 app = Flask(__name__)
 assets = Environment(app)
+
 
 #Registering Blueprint
 app.register_blueprint(main)
