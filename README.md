@@ -5,7 +5,7 @@ A font search website
 
 
 To Contribute
-=============
+
 * Fork the repo
 * Install your local virtual env
 
