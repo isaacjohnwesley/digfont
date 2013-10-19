@@ -7,26 +7,26 @@ A font search website
 To Contribute
 
 * Fork the repo
-* Install your local virtual env
-
-```sh
-virtualenv venv
-```
-If you do not have virtualenv installed. Install using
+* First we virtualenv setup.
 
 ```sh
 $ sudo easy_install virtualenv
 ```
-* Initialize and activate virtualenv:
+* Inside the repo, install your virtual enviornment.
+
+```sh
+virtualenv venv
+```
+* Initialize and activate virtualenv.
 
 ```sh
 $ cd venv
 $ . bin/activate
 ```
-* Install Flask
+* Install requirements
 
 ```sh
-$ sudo pip install flask
+$ sudo pip install -r requirements.txt
 ```
 * Start the webserver. Come to the base folder and run
 
