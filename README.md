@@ -23,7 +23,7 @@ virtualenv venv
 $ cd venv
 $ . bin/activate
 ```
-* Install requirements
+* Install requirements. Before that you would be actually inside venv directory so cd .. out of it to the base of the project.
 
 ```sh
 $ sudo pip install -r requirements.txt
