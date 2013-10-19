@@ -28,7 +28,7 @@ $ . bin/activate
 ```sh
 $ sudo pip install -r requirements.txt
 ```
-* Start the webserver. Come to the base folder and run
+* Start the webserver.
 
 ```sh
 $ foreman start -f Procfile.dev
