@@ -7,7 +7,7 @@ A font search website
 To Contribute
 
 * Fork the repo
-* First we virtualenv setup.
+* First we gotta do virtualenv setup.
 
 ```sh
 $ sudo easy_install virtualenv
