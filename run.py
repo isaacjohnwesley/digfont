@@ -1,19 +1,20 @@
+#!/usr/bin/env python
+
 import os
 from flask import Flask
-from flask.ext.assets import Environment , Bundle
+from flask.ext.assets import Environment, Bundle
 from main.views import main
 from webassets.loaders import PythonLoader
-
 
 
 app = Flask(__name__)
 assets = Environment(app)
 
 
-#Registering Blueprint
+# Registering Blueprint
 app.register_blueprint(main)
 
-#Compress All Assets
+# Compress All Assets
 js = Bundle('javascripts/vendor/jquery-1.9.1.min.js',
             'javascripts/main.js',
             'javascripts/plugins.js',
@@ -24,15 +25,15 @@ js = Bundle('javascripts/vendor/jquery-1.9.1.min.js',
 assets.register('js_all', js)
 
 css = Bundle('stylesheets/css/boilerplate_main.css',
-            'stylesheets/css/normalize.css',
-            'stylesheets/css/page.css',
-            filters='cssmin', output='gen/packedcss.css')
+             'stylesheets/css/normalize.css',
+             'stylesheets/css/page.css',
+             filters='cssmin', output='gen/packedcss.css')
 assets.register('css_all', css)
 
 
-#App Configuration
+# App Configuration
 app.config.from_pyfile('settings.py')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug= True)
+    app.run(host='0.0.0.0', port=port, debug=True)
