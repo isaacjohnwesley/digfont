@@ -14,10 +14,10 @@ newlist = []
 
 
 @main.route('/')
-def index():
+def index(foundFont=None):
 
-    data = fetch_css("http://walletkit.com/")
-    return render_template('index.html')
+    data = fetch_css( "http://walletkit.com/" )
+    return render_template('index.html',foundFont=data)
 
 
 @main.route('/search', methods=['POST'])

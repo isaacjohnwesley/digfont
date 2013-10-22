@@ -7,28 +7,28 @@ A font search website
 To Contribute
 
 * Fork the repo
-* Install your local virtual env
-
-```sh
-virtualenv venv
-```
-If you do not have virtualenv installed. Install using
+* First we gotta do virtualenv setup.
 
 ```sh
 $ sudo easy_install virtualenv
 ```
-* Initialize and activate virtualenv:
+* Inside the repo, install your virtual enviornment.
+
+```sh
+virtualenv venv
+```
+* Initialize and activate virtualenv.
 
 ```sh
 $ cd venv
 $ . bin/activate
 ```
-* Install Flask
+* Install requirements. Before that you would be actually inside venv directory so cd .. out of it to the base of the project.
 
 ```sh
-$ sudo pip install flask
+$ sudo pip install -r requirements.txt
 ```
-* Start the webserver. Come to the base folder and run
+* Start the webserver.
 
 ```sh
 $ foreman start -f Procfile.dev
