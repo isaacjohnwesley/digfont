@@ -1,5 +1,5 @@
 body{
-  font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B';
+  font-family:  'Ubuntu', sans-serif;
 }
 /* input, text area focus color */
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
@@ -13,16 +13,20 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 /* place holder color */
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color:#999;
+  color:rgba(255,255,255,0.5);
 }
 input:-moz-placeholder, textarea:-moz-placeholder {
-  color:#999;
+  color:rgba(255,255,255,0.5);
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-  color:#999;
+  color:rgba(255,255,255,0.5);
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color:#999;
+  color:rgba(255,255,255,0.5);
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 .search-head{
@@ -38,7 +42,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 72px;
     color: #fff;
     padding: 30px 0;
-    text-shadow: 3px 3px 0px rgba(63, 76, 107, 1);
 }
 
 .search-input{
@@ -47,12 +50,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     width: 500px;
     background-color: none;
     background: none;
-    border: 3px solid #fff;
+    border: 5px solid #fff;
     color: #fff;
 
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 span.example-txt{
@@ -67,7 +70,7 @@ span.example-txt a{
 }
 
 span.example-txt a:hover{
-    color: #2a62ad;
+    color: #3f3170;
 }
 
 
