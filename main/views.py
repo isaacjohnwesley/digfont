@@ -6,10 +6,6 @@ from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
 import cssutils
 
-from main.model import mysql_db
-
-
-
 main = Blueprint('main', __name__, template_folder='pages')
 
 fonts_junk=[]

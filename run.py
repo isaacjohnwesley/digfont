@@ -3,12 +3,14 @@ from flask import Flask
 from flask.ext.assets import Environment , Bundle
 from main.views import main
 from webassets.loaders import PythonLoader
-
+from flask.ext.mongoengine import MongoEngine
 
 
 app = Flask(__name__)
 assets = Environment(app)
-
+app.config['MONGODB_SETTINGS'] = {'DB' : 'digfont'}
+app.config['SECRET_KEY'] = "dig.font.s3cr3t"
+db = MongoEngine(app)
 
 #Registering Blueprint
 app.register_blueprint(main)
