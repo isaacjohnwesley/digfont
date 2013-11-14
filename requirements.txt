@@ -1,6 +1,7 @@
 BeautifulSoup==3.2.1
 Flask==0.9
 Flask-Assets==0.7
+Flask-Script==0.6.3
 Flask-WTF==0.9.3
 Jinja2==2.6
 PIL==1.1.7
@@ -15,8 +16,8 @@ gunicorn==0.17.2
 mongoengine==0.8.4
 peewee==2.1.5
 pymongo==2.6.3
+requests==2.0.1
 selenium==2.37.2
 webassets==0.7
 wsgiref==0.1.2
 wtf-peewee==0.2.2
-cssmin
