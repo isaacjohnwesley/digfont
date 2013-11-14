@@ -3,12 +3,17 @@ body{
 }
 /* input, text area focus color */
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
-    border-color: #c0c0c0 !important;
-    outline: 0;
-    outline: thin dotted 9;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(187, 187, 187, 0.3) !important;
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(82, 168, 236, 0.3) !important;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(146, 146, 146, 0.3) !important;
+  border-color: #c0c0c0 !important;
+  outline: 0;
+  outline: thin dotted 9;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(187, 187, 187, 0.3) !important;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(82, 168, 236, 0.3) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(146, 146, 146, 0.3) !important;
+
+  -webkit-animation: bounce 800ms ease-out;
+  -moz-animation: bounce 800ms ease-out;
+  -o-animation: bounce 800ms ease-out;
+  animation: bounce 800ms ease-out;
 }
 
 /* place holder color */
@@ -30,47 +35,47 @@ a:hover{
 }
 
 .search-head{
-    height: 400px;
-    background: #41bbcd; /* Old browsers */
+  height: 400px;
+  background: #41bbcd; /* Old browsers */
 
-    text-align: center;
+  text-align: center;
 }
 
 .title-logo{
-    font-weight: 700; 
-    font-style: normal;
-    font-size: 72px;
-    color: #fff;
-    padding: 30px 0;
+  font-weight: 700; 
+  font-style: normal;
+  font-size: 72px;
+  color: #fff;
+  padding: 30px 0;
 }
 
 .search-input{
-    font-size: 30px;
-    padding: 20px;
-    width: 500px;
-    background-color: none;
-    background: none;
-    border: 5px solid #fff;
-    color: #fff;
+  font-size: 30px;
+  padding: 20px;
+  width: 500px;
+  background-color: none;
+  background: none;
+  border: 5px solid #fff;
+  color: #fff;
 
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 span.example-txt{
-    font-size: 21px;
-    color: #fff;
-    font-weight: 200;
+  font-size: 21px;
+  color: #fff;
+  font-weight: 200;
 }
 
 span.example-txt a{
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 span.example-txt a:hover{
-    color: #3f3170;
+  color: #3f3170;
 }
 
 
@@ -184,3 +189,75 @@ input {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+.fixed940px{
+  width: 940px;
+  margin: 0 auto;
+}
+
+ul.website-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+ul.website-list > li{
+  margin: 40px 20px;
+  background: #fff;
+  float: left;
+
+  box-shadow: rgb(222, 222, 222) 1px 1px,
+    rgb(222, 222, 222) 2px 2px,
+    rgb(222, 222, 222) 3px 3px,
+    rgb(222, 222, 222) 4px 4px,
+    rgb(224, 224, 224) 5px 5px,
+    rgb(226, 226, 226) 6px 6px,
+    rgb(229, 229, 229) 7px 7px,
+    rgb(231, 231, 231) 8px 8px,
+    rgb(233, 233, 233) 9px 9px,
+    rgb(236, 236, 236) 10px 10px,
+    rgb(238, 238, 238) 11px 11px,
+    rgb(240, 240, 240) 12px 12px,
+    rgb(243, 243, 243) 13px 13px,
+    rgb(245, 245, 245) 14px 14px,
+    rgb(247, 247, 247) 15px 15px,
+    rgb(250, 250, 250) 16px 16px,
+    rgb(252, 252, 252) 17px 17px,
+    rgb(255, 255, 255) 18px 18px;
+
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+ul.website-list > li:hover{
+  -webkit-transform: perspective(200) scale(1.02,1.02);
+  -moz-transform: perspective(200) scale(1.02,1.02);
+  -ms-transform: perspective(200) scale(1.02,1.02);
+  -o-transform: perspective(200) scale(1.02,1.02);
+  transform: perspective(200) scale(1.02,1.02);
+}
+
+ul.website-list > li > a{
+  float: left;
+  display: block;
+  width: 235px;
+  height: 235px;
+
+  border: 5px solid #5B6A6D;
+  position: relative;  
+}
+
+
+.glare{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 200px solid rgba(255,255,255,0.1);
+  border-left: 240px solid transparent;
+}
+
