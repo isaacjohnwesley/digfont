@@ -19,3 +19,4 @@ selenium==2.37.2
 webassets==0.7
 wsgiref==0.1.2
 wtf-peewee==0.2.2
+cssmin

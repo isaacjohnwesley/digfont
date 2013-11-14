@@ -17,8 +17,7 @@ newlist=[]
 def index(foundFont=None):
 
     #data = fetch_css( "http://walletkit.com/" )
-    data = None
-    return render_template('index.html',foundFont=data)
+    return render_template('index.html')
 
 
 @main.route('/search' , methods=['POST'])
