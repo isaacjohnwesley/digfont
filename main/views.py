@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template , request
 
 # For scraping
-import urllib2 , httplib
+import urllib2
 from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
 import cssutils
+import requests
 
 main = Blueprint('main', __name__, template_folder='pages')
 
@@ -15,7 +16,8 @@ newlist=[]
 @main.route('/')
 def index(foundFont=None):
 
-    data = fetch_css( "http://walletkit.com/" )
+    #data = fetch_css( "http://walletkit.com/" )
+    data = None
     return render_template('index.html',foundFont=data)
 
 
@@ -33,11 +35,12 @@ def addnew():
     return render_template('addnew.html')
 
 def fetch_css(url):
+    fonts_found = []
 
     try:
-      response = urllib2.urlopen(url)
-      html_data = response.read()
-      response.close()
+      headers = {'User-agent': 'Mozilla/5.0'}
+      response = requests.get(url, headers=headers)
+      html_data = response.content
 
       soup = BeautifulSoup(''.join(html_data))
 
@@ -60,9 +63,9 @@ def fetch_css(url):
                css_url = i['href']
                print "Found external stylesheet: " + css_url
 
-            response = urllib2.urlopen(css_url)
-            ext_css_data += response.read()
-            response.close()
+            response = requests.get(css_url, headers=headers)
+            if response.status_code == 200:
+              ext_css_data += response.content
       else:
          ext_found = 0
          print "No external stylesheets found"
@@ -77,14 +80,16 @@ def fetch_css(url):
           # find property
           for property in rule.style:
             if property.name == 'font-family':
-              fonts_junk.append(str(property.value))
+              fonts_found.append(str(property.value))
 
-              # remove duplicate entries
-              for i in fonts_junk:
-                if i not in newlist:
-                  newlist.append(i)
-
-      return newlist
+      return clean_fonts(' '.join(list(set(fonts_found))))
 
     except:
-        return "",0,0
+        return None
+
+def clean_fonts(font_string):
+  EXCLUDE = ('sans-serif', 'serif', 'inherit', 'monospace', '!important', '"', "'")
+  for rule in EXCLUDE:
+    print rule
+    font_string = font_string.replace(rule, '').strip()
+  return font_string

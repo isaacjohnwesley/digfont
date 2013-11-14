@@ -1,8 +1,7 @@
 from run import db
 
-#Fonts Model
-class fonts(db.Document):
-    font_name = db.StringField()
-    site_url = db.StringField()
+class Font(db.Document):
+    name = db.StringField()
+    site_url = db.URLField()
     image_url = db.StringField()
-    last_update = db.DateTimeField()
+    updated = db.DateTimeField()
