@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template , request
+from flask import Blueprint, render_template, request, jsonify
 
 # For scraping
 import urllib2
@@ -6,6 +6,8 @@ from BeautifulSoup import BeautifulSoup
 from urlparse import urlparse
 import cssutils
 import requests
+
+# from run import db
 
 main = Blueprint('main', __name__, template_folder='pages')
 
@@ -20,14 +22,10 @@ def index(foundFont=None):
     return render_template('index.html')
 
 
-@main.route('/search' , methods=['POST'])
-def search(data=None):
-
-    if request.method == 'POST':
-      searchq = request.form['searchquery']
-
-    return render_template('search_results.html',data=searchq)
-
+@main.route('/search/<querystring>')
+def search(querystring):
+  # font_results = db.command('text', 'Font', search=querystring)
+  pass
 @main.route('/addnew')
 def addnew():
 
@@ -89,6 +87,5 @@ def fetch_css(url):
 def clean_fonts(font_string):
   EXCLUDE = ('sans-serif', 'serif', 'inherit', 'monospace', '!important', '"', "'")
   for rule in EXCLUDE:
-    print rule
     font_string = font_string.replace(rule, '').strip()
   return font_string
