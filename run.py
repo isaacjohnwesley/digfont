@@ -12,6 +12,8 @@ app.config['MONGODB_SETTINGS'] = {'DB' : 'digfont'}
 app.config['SECRET_KEY'] = "dig.font.s3cr3t"
 db = MongoEngine(app)
 
+db.createCollection('fontsdb')
+
 #Registering Blueprint
 app.register_blueprint(main)
 
