@@ -272,7 +272,6 @@ ul.website-list{
 
 ul.website-list > li{
   margin: 40px;
-  background: #fff;
   float: left;
 
 
@@ -293,7 +292,7 @@ ul.website-list > li:hover{
   transform: perspective(200) scale(1.02,1.02);
 }
 
-ul.website-list > li > a{
+ul.website-list > li > a.browser{
   float: left;
   display: block;
   width: 235px;
@@ -303,6 +302,7 @@ ul.website-list > li > a{
 
   background-image: url('/static/images/browser.png');
   background-repeat: no-repeat;
+  margin-bottom: 10px;
 }
 
 ul.website-list > li > a > img{
@@ -325,4 +325,21 @@ ul.website-list > li > a > img{
   border-top: 200px solid rgba(255,255,255,0.1);
   border-left: 240px solid transparent;
 }
+
+a.font-url{
+  color: #b0baba;
+  font-size: 16px;
+  font-family: 'CallunaRegular', sans-serif;
+  text-align: center;
+  display: block;
+  width: 235px;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+a.font-url:hover{
+  color: #8b9494;
+}
+
 
