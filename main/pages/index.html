@@ -1,15 +1,18 @@
 {% include 'header.html' %}
 
 <div class="search-head">
-    <div class="title-logo">DigFont</div>
+	<div class="nav">
+    	<div class="title-logo"></div>
+	</div>
     <form action="search" method="Post">
-        <input name="searchquery" type="text" class="search-input" placeholder="search a font">
+        <input name="searchquery" type="text" class="search-input" placeholder="search a font" />
+        <button class="search"></button>
     </form>
-    <br/><br/>
+    <br/>
     <span class="example-txt">example: <a href="#">aller</a>,&nbsp;<a href="#">proxima nova</a></span>
 </div>
 
-<div class="fixed940px">
+<!--div class="fixed940px">
 	<ul class="website-list">
 		<li>
 			<a href="#">
@@ -18,6 +21,6 @@
 			</a>
 		</li>
 	</ul>
-</div>
+</div-->
 
 {% include 'footer.html' %}
