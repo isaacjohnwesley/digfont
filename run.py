@@ -29,6 +29,7 @@ assets.register('js_all', js)
 
 css = Bundle('stylesheets/css/boilerplate_main.css',
             'stylesheets/css/normalize.css',
+            'stylesheets/css/bootstrap-grid.css',
             'stylesheets/css/page.css',
             filters='cssmin', output='gen/packedcss.css')
 assets.register('css_all', css)
