@@ -18,6 +18,35 @@ html{
 body{
   font-family: 'Varela Round', sans-serif;
 }
+
+/* Mozilla based browsers */
+::-moz-selection {
+background-color: #5b858b;
+color: #fff;
+}
+
+/* Works in Safari */
+::selection {
+background-color: #5b858b;
+color: #FFF;
+}
+
+/* Works in Opera */
+::-o-selection {
+background-color: #5b858b;
+color: #FFF;
+}
+::-ms-selection {
+background-color: #5b858b;
+color: #FFF;
+}
+
+/* Works in Internet Explorer */
+::-webkit-selection {
+background-color: #5b858b;
+color: #FFF;
+}
+
 /* input, text area focus color */
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
   border-color: #5b858b !important;
@@ -115,9 +144,24 @@ button.search{
   border: none;
   left: -65px;
   top: -10px;
+
+
+  -webkit-transition-property: left;
+       -moz-transition-property: left;
+         -o-transition-property: left;
+            transition-property: left;
+    -webkit-transition-duration: 0.1s;
+       -moz-transition-duration: 0.1s;
+         -o-transition-duration: 0.1s;
+            transition-duration: 0.1s;
+    -webkit-transition-timing-function: linear;
+       -moz-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
 }
 
 button.search:focus{
+  left: -55px;
   outline: 0;
   background-image: url('/static/images/search_active.png');
 }
