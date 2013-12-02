@@ -104,3 +104,9 @@ def view_font(name, page, per_page=10):
         return render_template('font.html', pagination=pagination, name=name)
     except db.DoesNotExist:
         abort(404)
+
+def search():
+    if 'searchquery' in request.form:
+        name = request.form['searchquery']
+        return redirect(url_for('view_font', name=name))
+    return redirect(url_for('index'), 302)

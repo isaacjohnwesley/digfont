@@ -22,6 +22,18 @@
 
 {% block content %}
 	<div class="container">
+    <div class="search-content">
+      <div class="nav">
+          <div class="title-logo"></div>
+      </div>
+
+      <form action="{{url_for('search')}}" method="POST">
+        <input name="searchquery" type="text" class="search-input" placeholder="search a font" value="{{name}}"/>
+        <button id="search-btn" class="search"></button>
+      </form>
+      <br/>
+      <span class="example-txt">example: <a href="#">aller</a>,&nbsp;<a href="#">proxima nova</a></span>
+    </div>
 		<div class="sites">
 			{% for item in pagination.items %}
   			<h2> {{ item.site_url }} </h2>
