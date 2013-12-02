@@ -1,113 +1,103 @@
-{% include 'header.html' %}
+{% extends 'base.html' %}
 
-<div class="search-content">
-	<div class="nav">
-    	<div class="title-logo"></div>
+{% block content %}
+	<div class="search-content">
+		<div class="nav">
+	    	<div class="title-logo"></div>
+		</div>
+
+		    <form action="search" method="Post">
+		        <input name="searchquery" type="text" class="search-input" placeholder="search a font" />
+		        <button id="search-btn" class="search"></button>
+		    </form>
+		    <br/>
+		    <span class="example-txt">example: <a href="#">aller</a>,&nbsp;<a href="#">proxima nova</a></span>
 	</div>
 
-	    <form action="search" method="Post">
-	        <input name="searchquery" type="text" class="search-input" placeholder="search a font" />
-	        <button id="search-btn" class="search"></button>
-	    </form>
-	    <br/>
-	    <span class="example-txt">example: <a href="#">aller</a>,&nbsp;<a href="#">proxima nova</a></span>
-</div>
-
-<div class="results-area">
-	<div class="grad-border"></div>
+	<div class="results-area">
+		<div class="grad-border"></div>
 
 
-	<div class="container">
-		<ul class="website-list">
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
+		<div class="container">
+			<ul class="website-list">
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="{{ url_for('static', filename='images/website_throbber.gif') }}" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="{{ url_for('static', filename='images/website_throbber.gif') }}" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="/static/images/website_throbber.gif" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="/static/images/website_throbber.gif" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
 
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-			<li class="col-xs-12 col-sm-6 col-md-3">
-				<div class="result-item">
-					<a class="browser" href="#">
-						<div class="glare"></div>
-						<img class="screeshots" src="/static/images/website_throbber.gif" />
-					</a>
-					<a class="font-url" href="#">www.weblink.com</a>
-				</div>
-			</li>
-		</ul>
-		</ul>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="/static/images/website_throbber.gif" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="/static/images/website_throbber.gif" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="/static/images/website_throbber.gif" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+				<li class="col-xs-12 col-sm-6 col-md-3">
+					<div class="result-item">
+						<a class="browser" href="#">
+							<div class="glare"></div>
+							<img class="screeshots" src="/static/images/website_throbber.gif" />
+						</a>
+						<a class="font-url" href="#">www.weblink.com</a>
+					</div>
+				</li>
+			</ul>
+			</ul>
 
-	</div>
-	
-</div> <!--end .results-area -->
+		</div>
+		
+	</div> <!--end .results-area -->
 
-
-<script type="text/javascript">
-	$('.search-input').focus(function(){
-		$('#search-btn').css("left","-55px");
-	});
-	$('.search-input').focusout(function(){
-		$('#search-btn').css("left","-65px");
-	});
-</script>
-
-
-{% include 'footer.html' %}
+{% endblock %}

@@ -1,77 +1,13 @@
-{% include 'header.html' %}
+{% extends 'base.html' %}
+{% block content %}
+    <div class="sign-up" >
+        <h1 class="sign-up-title">Add new url</h1>
+        <div id="add-url-container"></div>
+        <form method="POST" name="font">
+            <!--HTML5 url field -->
+            <input id="url-input" type="url" class="sign-up-input" placeholder="Paste url" autofocus="" name="website">
+            <button  id="add" class="sign-up-button">ADD</button>
+        </form>
+    </div>
 
-<div class="sign-up" >
-<h1 class="sign-up-title">Add new url</h1>
-<div id="add-url-container"></div>
-</div>
-
-
-
-{% include 'javascript_includes.html' %}
-
-<script type="text/template" id="add-url-form">
-    <input id="url-input" type="text" class="sign-up-input" placeholder="Paste url" autofocus="">
-    <button  id="add" class="sign-up-button">ADD</button>
-</script>
-
-<script type="text/javascript">
-
-
-var Url = Backbone.Model.extend({
-    defaults:{
-        url: ''
-    },
-    initialize: function(){
-        this.on("change:url", function(model){
-            var final_url = model.get("url");
-            alert("changed url to " + final_url);
-            this.url = "http://screenshoter.herokuapp.com/takescreenshot";
-        });
-    },
-    methodToURL: {
-        'create': 'http://screenshoter.herokuapp.com/takescreenshot'
-    },
-    sync: function(method, model, options) {
-        if (method === "get");
-        return Backbone.sync(method, model, options);
-    }
-    url:'http://screenshoter.herokuapp.com/takescreenshot'
-
-});
-
-var AddUrlView = Backbone.View.extend({
-    initialize: function(){
-        this.render();
-    },
-    render: function(){
-        var template = _.template($('#add-url-form').html());
-        $(this.el).html(template);
-    },
-    events: {
-       "click button#add": "addUrl",
-       "keyup input#url-input": "validateUrl"
-    },
-    validateUrl: function(event){
-        //console.log("URl -" + $("#url-input").val());
-        function is_valid_url(chk_url){
-            return chk_url.match(/^(ht|f)tps?:\/\/[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/);
-        }
-    },
-    addUrl: function(event){
-        var url = new Url();
-        var fetched_url = $("#url-input").val();
-        url.set({url:fetched_url});
-        url.fetch();
-        //url.save({url:fetched_url});
-    }
-
-
-});
-
-var add_url_view = new AddUrlView({el: $("#add-url-container")});
-
-</script>
-
-
-
-{% include 'footer.html' %}
+{% endblock %}

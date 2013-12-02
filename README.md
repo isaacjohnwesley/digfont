@@ -34,3 +34,8 @@ $ sudo pip install -r requirements.txt
 $ foreman start -f Procfile.dev
 ```
 
+# Create mongodb index from mongo shell
+
+```sh
+$ db.font.ensureIndex({name: 1});
+```

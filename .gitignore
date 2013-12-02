@@ -38,6 +38,7 @@ nosetests.xml
 *.pyc
 
 venv/
+env/
 static/build/
 static/.webassets-cache/
 

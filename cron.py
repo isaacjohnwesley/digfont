@@ -35,3 +35,4 @@ if __name__ == '__main__':
 		grab_from_webcreme()
 	elif sys.argv[1] == 'grab':
 		grab_fonts()
+	elif sys.argv[1] == 'grabfonts':
