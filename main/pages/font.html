@@ -21,7 +21,7 @@
 {% endmacro %}
 
 {% block content %}
-	<div class="container">
+  <div class="container">
     <div class="search-content">
       <div class="nav">
           <div class="title-logo"></div>
@@ -34,19 +34,19 @@
       <br/>
       <span class="example-txt">example: <a href="#">aller</a>,&nbsp;<a href="#">proxima nova</a></span>
     </div>
-		<div class="sites">
-			{% for item in pagination.items %}
-  			<h2> {{ item.site_url }} </h2>
-  			<ul>
-	  			{% for font_name in item.name %}
-	  				<li>{{ font_name }}</li>
-	  			{% endfor %} <br/>
-  			</ul>
-  		{% endfor %}
-		</div>
-    	<div class="pagination">
+    <div class="sites">
+      {% for item in pagination.items %}
+        <h2> {{ item.site_url }} </h2>
+        <ul>
+          {% for font_name in item.name %}
+            <li>{{ font_name }}</li>
+          {% endfor %} <br/>
+        </ul>
+      {% endfor %}
+    </div>
+      <div class="pagination">
         {{ render_pagination(pagination, name) }}
-    	</div>
+      </div>
     </div>
 
 {% endblock %}

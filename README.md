@@ -34,8 +34,18 @@ $ sudo pip install -r requirements.txt
 $ foreman start -f Procfile.dev
 ```
 
-# Create mongodb index from mongo shell
+* Create mongodb index from mongo shell
 
 ```sh
 $ db.font.ensureIndex({name: 1});
+```
+
+* Add new links to mongodb
+```sh
+$ python manage.py add_url_file urls.txt
+```
+
+* Sync all fonts in db
+```sh
+$ python manage.py sync
 ```
