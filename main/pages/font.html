@@ -13,10 +13,10 @@
       <span class=ellipsis>…</span>
     {% endif %}
   {%- endfor %}
-  {% if pagination.has_next %}
+  {%- if pagination.has_next %}
     <a href="{{ url_for('view_font', name=name, page=pagination.page + 1)
       }}">Next &raquo;</a>
-  {% endif %}
+  {%- endif %}
   </div>
 {% endmacro %}
 
@@ -35,14 +35,14 @@
       <span class="example-txt">example: <a href="#">aller</a>,&nbsp;<a href="#">proxima nova</a></span>
     </div>
     <div class="sites">
-      {% for item in pagination.items %}
+      {%- for item in pagination.items %}
         <h2> {{ item.site_url }} </h2>
         <ul>
-          {% for font_name in item.name %}
+          {%- for font_name in item.name %}
             <li>{{ font_name }}</li>
-          {% endfor %} <br/>
+          {%- endfor %} <br/>
         </ul>
-      {% endfor %}
+      {%- endfor %}
     </div>
       <div class="pagination">
         {{ render_pagination(pagination, name) }}
