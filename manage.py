@@ -7,10 +7,17 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import mongoengine
 from flask.ext.script import Manager, Server
 from main import create_app
-from main.views import get_all_fonts
+from main.views import index, view_site, addnew, view_font, search, get_all_fonts
 from main.models import db, Font
-app = create_app()
 
+app = create_app()
+# Add urls
+app.add_url_rule('/', view_func=index, methods=['GET'])
+app.add_url_rule('/<website>', view_func=view_site)
+app.add_url_rule('/new', view_func=addnew, methods=["GET", "POST"])
+app.add_url_rule('/font/<name>', view_func=view_font, methods=["GET"], defaults={'page': 1})
+app.add_url_rule('/font/<name>/<int:page>', view_func=view_font, methods=["GET"])
+app.add_url_rule('/search', view_func=search, methods=["POST"])
 
 manager = Manager(app)
 
