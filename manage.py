@@ -6,9 +6,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import mongoengine
 from flask.ext.script import Manager, Server
-from main import app, db
+from main import create_app
 from main.views import get_all_fonts
-from main.model import Font
+from main.models import db, Font
+app = create_app()
 
 
 manager = Manager(app)
@@ -47,6 +48,7 @@ def add_url_file(filename):
 			url = url.strip("\n")
 			try:
 				Font.objects.get(site_url=url)
+				print("{0} already exists.".format(url))
 			except db.DoesNotExist:
 				font = Font(site_url=url)
 				font.save()
